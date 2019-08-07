@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { get, controller } from "./decorators";
+import { get, post, controller, required } from "./decorators";
 
 @controller("/auth")
 class LoginController {
@@ -7,4 +7,8 @@ class LoginController {
   getLogin(req: Request, res: Response): void {
     res.send("<h1>Hi there!</h1>");
   }
+
+  @post("/login")
+  @required("username", "password")
+  postLogin(req: Request, res: Response): void {}
 }
