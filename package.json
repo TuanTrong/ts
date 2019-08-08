@@ -4,9 +4,10 @@
   "description": "ts",
   "main": "index.js",
   "scripts": {
-    "start:build": "tsc -w",
-    "start:run": "nodemon build/index.js",
-    "start": "concurrently npm:start:*"
+    "be:start:build": "tsc -w",
+    "be:start:run": "nodemon build/index.js",
+    "fe:start:build": "cd blog && npm start",
+    "start": "concurrently npm:be:start:* npm:fe:start:*"
   },
   "repository": {
     "type": "git",
